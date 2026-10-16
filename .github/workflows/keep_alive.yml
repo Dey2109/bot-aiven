@@ -15,4 +15,5 @@ jobs:
 
       - name: Ejecutar consulta Keep-Alive
         run: |
-          mysql "${{ secrets.MYSQL_URI }}" -e "SELECT 1;"
+                  mysql "$MYSQL_URI" -e "SELECT 1;"
+
