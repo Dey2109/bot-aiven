@@ -13,7 +13,5 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y mysql-client
 
       - name: Ejecutar consulta Keep-Alive
-        env:
-          MYSQL_URI: ${{ secrets.MYSQL_URI }}
         run: |
-          mysql "$MYSQL_URI" -e "SELECT 1;"
+          mysql "mysql://avnadmin:AVNS_2abzGchYtmErU0E7gNu@cafeteria-db-cloud-cafeteria-db-cloud-in.e.aivencloud.com:24029/defaultdb?ssl-mode=REQUIRED" -e "SELECT 1;"
