@@ -1,0 +1,18 @@
+name: Aiven Keep Alive
+
+on:
+  schedule:
+    # Se ejecuta cada 30 minutos
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # Permite activarlo manualmente para probar
+
+jobs:
+  ping-db:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Instalar cliente MySQL
+        run: sudo apt-get update && sudo apt-get install -y mysql-client
+
+      - name: Ejecutar consulta Keep-Alive
+        run: |
+          mysql "${{ secrets.MYSQL_URI }}" -e "SELECT 1;"
