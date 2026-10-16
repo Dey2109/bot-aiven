@@ -14,4 +14,5 @@ jobs:
 
       - name: Ejecutar consulta Keep-Alive
         run: |
-          mysql "mysql://avnadmin:AVNS_2abzGchYtmErU0E7gNu@cafeteria-db-cloud-cafeteria-db-cloud-in.e.aivencloud.com:24029/defaultdb?ssl-mode=REQUIRED" -e "SELECT 1;"
+                    mysql -h "://aivencloud.com" -P 24029 -u "avnadmin" -p"AVNS_2abzGchYtmErU0E7gNu" "defaultdb" -e "SELECT 1;"
+
